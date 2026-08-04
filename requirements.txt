@@ -1,0 +1,13 @@
+# ─── Runtime ────────────────────────────────────────────────────────────────
+fastapi==0.141.1
+uvicorn==0.52.1
+python-multipart==0.0.32
+PyMuPDF==1.28.0
+python-magic-bin==0.4.14; sys_platform == "win32"
+python-magic==0.4.27; sys_platform != "win32"
+ftfy==6.3.1
+numpy==2.5.1
+scikit-learn==1.9.0
+pydantic==2.13.4
+pydantic-settings==2.14.2
+python-dotenv==1.2.2

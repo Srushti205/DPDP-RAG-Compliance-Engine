@@ -1,0 +1,52 @@
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ─── Virtual environments ─────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ─── Environment ─────────────────────────────────────────────────────────────
+.env
+!.env.example
+
+# ─── Testing & coverage ──────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# ─── Linters & type checkers ─────────────────────────────────────────────────
+.mypy_cache/
+.ruff_cache/
+
+# ─── IDE ─────────────────────────────────────────────────────────────────────
+.idea/
+*.swp
+*.swo
+
+# ─── Data & storage (never commit raw documents or vector DBs) ───────────────
+data/raw/*
+data/processed/*
+storage/chroma/*
+storage/bm25_index.pkl
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/dpdp_act/.gitkeep
+!storage/chroma/.gitkeep
+
+# ─── OS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini

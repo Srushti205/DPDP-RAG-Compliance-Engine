@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run: FastAPI",
+      "type": "shell",
+      "command": "uvicorn api.main:app --host 127.0.0.1 --port 8000 --reload",
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "new" },
+      "options": { "env": { "PYTHONPATH": "${workspaceFolder}" } }
+    },
+    {
+      "label": "Test: pytest",
+      "type": "shell",
+      "command": "pytest tests -v",
+      "group": { "kind": "test", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "options": { "env": { "PYTHONPATH": "${workspaceFolder}" } }
+    },
+    {
+      "label": "Format: black",
+      "type": "shell",
+      "command": "black src api tests config.py",
+      "group": "none",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Lint: flake8",
+      "type": "shell",
+      "command": "flake8 src api tests config.py --max-line-length=88 --extend-ignore=E203",
+      "group": "none",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Type: mypy",
+      "type": "shell",
+      "command": "mypy src api config.py",
+      "group": "none",
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "options": { "env": { "PYTHONPATH": "${workspaceFolder}" } }
+    }
+  ]
+}

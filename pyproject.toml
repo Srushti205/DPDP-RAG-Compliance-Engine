@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "dpdp-rag"
+version = "0.1.0"
+description = "DPDP Act hotel compliance — Pipeline 1: Document Ingestion"
+requires-python = ">=3.12"
+readme = "README.md"
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+exclude = ["tests/", "frontend/"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=src --cov=api --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["src", "api"]
+omit = ["*/tests/*"]
